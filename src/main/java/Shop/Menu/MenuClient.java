@@ -1,6 +1,7 @@
 package Shop.Menu;
 
 import Shop.Option.Option;
+import Shop.entites.Product;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -23,8 +24,13 @@ public class MenuClient {
                     break;
                 case 2 :
                     System.out.println(" ");
-
-
+                    System.out.println("enter id");
+                    int id = scanner.nextInt();
+                    System.out.println(" enter name");
+                    String name = scanner.next();
+                    Product product = new Product(id , name);
+                    option.busket(product);
+                    break;
             }
 
 

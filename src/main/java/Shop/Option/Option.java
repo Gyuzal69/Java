@@ -25,7 +25,6 @@ public class Option {
         preparedStatement.setInt(1 , product.getId());
         preparedStatement.setString(2, product.getName());
         preparedStatement.executeUpdate();
-
     }
 
 
