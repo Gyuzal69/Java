@@ -36,40 +36,44 @@ Scanner scanner = new Scanner(System.in);
                     System.out.println("localdate");
                     String localdate = scanner.next();
                     Product product = new Product(id , name , price , localdate);
-                    addpRODUCT(product);
+                    Option option1 = new Option();
+                    option1.addRODUCT(product);
+//                    addpRODUCT(product);
                     break;
                 case 2:
-                    removePRODUCT();
+                    Option option2 = new Option();
+                    option2.removePRODUCT();
                     break;
                 case 3:
-                    ChangePrice();
+                    Option option3 = new Option();
+                    option3.ChangePrice();
             }
 
 
         }
     }
 
-    public void addpRODUCT(Product p) throws SQLException {
-        Connection connection = db.getConnect();
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into menu(id , name , price , localdate) values (?, ? , ? , ?)");
-        preparedStatement.setInt(1 , p.getId());
-        preparedStatement.setString(2 , p.getName());
-        preparedStatement.setInt(3 , p.getPrice());
-        preparedStatement.setString(4 , p.getLocaldate());
-        preparedStatement.executeUpdate();
-    }
+//    public void addpRODUCT(Product p) throws SQLException {
+//        Connection connection = db.getConnect();
+//        PreparedStatement preparedStatement = connection.prepareStatement("insert into menu(id , name , price , localdate) values (?, ? , ? , ?)");
+//        preparedStatement.setInt(1 , p.getId());
+//        preparedStatement.setString(2 , p.getName());
+//        preparedStatement.setInt(3 , p.getPrice());
+//        preparedStatement.setString(4 , p.getLocaldate());
+//        preparedStatement.executeUpdate();
+//    }
 
-    public void removePRODUCT() throws SQLException {
-        Connection connection = db.getConnect();
-        String name = scanner.next();
-        PreparedStatement preparedStatement = connection.prepareStatement("delete from menu where name = '"+ name +"'");
-        preparedStatement.executeUpdate();
-    }
-    public void ChangePrice() throws SQLException {
-        Connection connection = db.getConnect();
-        int price = scanner.nextInt();
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into menu where price = '" + price+  "'");
-        preparedStatement.executeUpdate();
-    }
+//    public void removePRODUCT() throws SQLException {
+//        Connection connection = db.getConnect();
+//        String name = scanner.next();
+//        PreparedStatement preparedStatement = connection.prepareStatement("delete from menu where name = '"+ name +"'");
+//        preparedStatement.executeUpdate();
+//    }
+//    public void ChangePrice() throws SQLException {
+//        Connection connection = db.getConnect();
+//        int price = scanner.nextInt();
+//        PreparedStatement preparedStatement = connection.prepareStatement("insert into menu where price = '" + price+  "'");
+//        preparedStatement.executeUpdate();
+//    }
 
 }
